@@ -1,0 +1,61 @@
+---
+title: "Table-cell-merge Example"
+filters:
+  - { at: post-quarto, path: table-cell-merge }
+---
+
+## Heading
+
+This filter adds colspan/rawspan to cells in a table.
+
+
+## An example of colspan
+
+Merge the first three columns in the first row.
+
+| A | B | C | D |
+|---|---|---|---|
+| 1 | 2 | 3 | 4 |
+| 5 | 6 | 7 | 8 |
+: Caption {tbl-merge="[1:1:col:3]"}
+
+
+## An example of rowspan
+
+Merge the first column across three lines starting from the second line.
+
+| Name  | Score |
+|-------|-------|
+| Alice | 90    |
+| Bob   | 85    |
+| Carol | 72    |
+: {tbl-colwidths="[60,40]" tbl-merge="[2:1:row:3]"}
+
+
+## An example of colspan + rowspan
+
+- Header (row 1): column 2 -> colspan=2
+- Data (row 2): column 1 -> rowspan=3
+
+| Region | Q1  | Q2  |
+|--------|-----|-----|
+| East   | 100 | 200 |
+| East   | 110 | 210 |
+| East   | 120 | 220 |
+| West   | 400 | 500 |
+: {tbl-merge="[1:2:col:2, 2:1:row:3]" tbl-colwidths="[20,40,40]"}
+
+
+## An example of colspan + rowspan for Both Row and Column Merging
+
+- Header (row 2): column 2 -> colspan=2
+- Data (row 2): column 2 -> rowspan=2
+
+| Region | Q1  | Q2  |
+|--------|-----|-----|
+| East   | 100 | 200 |
+| East   | 110 | 210 |
+| East   | 120 | 220 |
+| West   | 400 | 500 |
+: {tbl-merge="[2:2:col:2, 2:2:row:2]"}
+
