@@ -280,7 +280,7 @@ function Table(tbl)
   local merge_str = extract_tbl_merge(inlines)
   if not merge_str then return nil end
 
-  -- caption から { ... } を除去
+  -- Remove { ... } from caption
   local clean = strip_tbl_merge(inlines)
   if #clean > 0 then
     tbl.caption.long[1] = pandoc.Plain(clean)
