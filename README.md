@@ -33,12 +33,12 @@ If you're using version control, you will want to check in this directory.
   [row:col:direction:span, ...]
   ```
 
-| Key       | Value                                                         |
-| :-------- | :------------------------------------------------------------ |
-| row       | **1-based** row index (**header rows first**, then body rows) |
-| col       | **1-based** column index                                         |
-| direction | `col` (`colspan`) or `row` (`rowspan`)                                |
-| span      | number of cells to merge (>= 2)                               |
+| Key       | Type    | Value                                                         |
+| :-------- | ------- | :------------------------------------------------------------ |
+| row       | integer | **1-based** row index (**header rows first**, then body rows) |
+| col       | integer | **1-based** column index                                      |
+| direction | string  | `col` (for `colspan`) or `row` (for `rowspan`)                |
+| span      | integer | number of cells to merge (>= 2)                               |
 
 
 ## Notes
